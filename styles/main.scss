@@ -1,0 +1,33 @@
+@import './variables';
+@import './reset';
+
+@function allGreens($key){
+    @return map-get($allGreens,$key)
+};
+
+@mixin flex-center($directions) {
+    display: flex;
+    align-items: center;
+    flex-direction:  $directions;
+
+}
+
+body{
+    background: lighten(purple,40%);
+    //background: darken(purple, 40%) 
+
+  main{
+      @include flex-center(column);
+    h1{
+        color: $orange-life;
+        background-color: allGreens(green2)
+    
+    }
+    
+    a{
+        display: block ;
+        color: $orange-life;
+        font-size: map-get($fontSize,medium)
+    }
+  }
+}
